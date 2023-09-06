@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import auth from './firebase';
 import "./signinstyles.css"
 
@@ -9,7 +9,7 @@ function Register({ onLoginClick }) {
 
     const authenticate = (e) => {
         e.preventDefault();
-        signInWithEmailAndPassword(auth, email, password)
+        createUserWithEmailAndPassword(auth, email, password)
             .then((usercredential) => {
                 console.log(usercredential);
             })
